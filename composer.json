@@ -1,0 +1,13 @@
+{
+	"require": {
+		"htmlburger/carbon-common": "^1.2",
+		"htmlburger/carbon-fields": "^2.2",
+		"htmlburger/carbon-debug": "^1.0",
+		"htmlburger/carbon-field-number": "^2.2"
+	},
+	"autoload": {
+		"psr-4": {
+			"Espace\\": "includes/espace/"
+		}
+	}
+}

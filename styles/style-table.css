@@ -1,0 +1,196 @@
+.section-table { height: 100vh; position: relative; display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex; }
+
+.mCSB_inside > .mCSB_container { margin: 0; }
+
+/* ------------------------------------------------------------ *\
+	Clock
+\* ------------------------------------------------------------ */
+
+.clock.flip-clock-wrapper { margin: 0 10px; width: 300px; }
+.clock.flip-clock-wrapper ul { width: 40px; height: 40px; font-size: 30px; line-height: 40px; position: relative; }
+.clock.flip-clock-wrapper ul li { line-height: 40px; list-style: none; }
+.clock.flip-clock-wrapper ul li a div { font-size: 40px; }
+.clock.flip-clock-wrapper ul li a div div.inn { font-size: 40px; background-color: #fff; color: #000; text-shadow: none; }
+.clock.flip-clock-wrapper ul .flip-clock-before a,
+.clock.flip-clock-wrapper ul .flip-clock-active a { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+.clock .flip-clock-divider { height: 40px; }
+.clock .flip-clock-divider:first-child { display: none; }
+.clock .flip-clock-dot { width: 8px; height: 8px; background-color: #fff; }
+.clock .flip-clock-dot.top { top: 15px; }
+.clock .flip-clock-dot.bottom { bottom: 0px; }
+
+@media(max-width: 767px){
+	.clock.flip-clock-wrapper { display: -webkit-flex; display: -moz-flex; display: -ms-flex; display: -o-flex; display: flex; justify-content: space-between; -ms-align-items: center; align-items: center; }
+}
+
+/* ------------------------------------------------------------ *\
+	Table
+\* ------------------------------------------------------------ */
+
+.table-events { width: 100vw; height: 100vh; overflow: hidden; display: -webkit-flex; display: -moz-flex; display: -ms-flex; display: -o-flex; display: flex; flex-direction: column; }
+.table-events .table__head { background-color: #40B9A1; display: -webkit-flex; display: -moz-flex; display: -ms-flex; display: -o-flex; display: flex; justify-content: space-between; -ms-align-items: center; align-items: center; flex: 1 1 auto; width: 100%; }
+.table-events .table__head h2 { margin: 0; padding: 0; }
+.table-events .table__head img { margin: 0; padding: 0; display: block; height: 67px; width: auto; }
+
+.table-events .table__body { flex: 1 1 auto; width: 100%; position: relative; overflow: hidden; height: calc(100% - 65px); }
+.is-touch .table-events .table__body { }
+
+.table-events table { margin: 0 !important; border-color: #000 !important; width: 100%; }
+.table-events table th { background-color: #272726; color: #40B9A1; text-align: center; padding: 10px 20px; white-space: nowrap; font-weight: 400; border: none !important; }
+
+.table-events table td { background-color: #272726; color: #ccc; border: 0 !important; padding: 10px 20px; text-align: center; border-bottom: 1px solid #000 !important; vertical-align: top; }
+
+.table-events table th:first-child { text-align: right; background-color: #000; color: #fff; padding-top: 0 !important; padding-bottom: 0 !important; }
+.table-events table td:first-child { text-align: right; background-color: #000; color: #40B9A1; line-height: 1.3; }
+
+.table-events table th:last-child { text-align: left; }
+.table-events table td:last-child { text-align: left; }
+
+.table__wrapper { height: 100%; overflow: hidden; display: -webkit-flex; display: -moz-flex; display: -ms-flex; display: -o-flex; display: flex; flex-direction: column; background-color: #000; }
+.table__wrapper .table__wrapper-head { overflow-y: scroll; flex: 1 1 auto; }
+.table__wrapper .table__wrapper-body { height: calc(100% - 40px); overflow-y: scroll; -webkit-overflow-scrolling: touch; flex: 1 1 auto; }
+
+
+@media(max-width: 1024px){
+	.table-events .table__head { justify-content: center; -ms-align-items: center;  align-items: center; flex-direction: column; padding: 10px; }
+	.table-events .table__head img { margin-bottom: 10px; }
+	.table-events .table__body { flex: 1 1 auto; width: 100%; position: relative; overflow: hidden; height: calc(100% - 137px); }
+
+	.table__wrapper .table__wrapper-head { display: none; }
+
+	.table-events table,
+	.table-events table tr,
+	.table-events table tbody { display: block; }
+	.table-events table td { text-align: right; padding-left: 160px; position: relative; text-align: left !important; display: block; }
+	.table-events table td:before { content: attr(data-title); text-align: left; font-weight: 700; text-align: left; margin: 0; width: 100%; display: block; text-align: left; }
+	.table-events table td { width: 100% !important; text-align: right; }
+}
+
+
+@media(max-width: 480px){
+	.table-events table td { font-size: 12px; padding: 6px 20px !important; }
+}
+
+/* ------------------------------------------------------------ *\
+	Vue modal
+\* ------------------------------------------------------------ */
+
+.modal-mask {
+	position: fixed;
+	z-index: 9998;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .5);
+	display: table;
+	transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.modal-container {
+	width: 100%;
+	max-width: 750px;
+	margin: 0px auto;
+	padding: 40px;
+	background-color: #fff;
+	border-radius: 2px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+	transition: all .3s ease;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+.modal-container label {
+	font-weight: 600;
+}
+
+.modal-container .view-map {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 12px;
+	margin-left: 8px;
+}
+
+.modal-container p span {
+	line-height: 1.8;
+}
+
+.modal-container .location-container p span {
+	display: block;
+}
+
+.modal-container h4 {
+	font-size: 16px;
+	padding-bottom: 0;
+	margin-top: 30px;
+	margin-bottom: 4px;
+}
+
+.modal-container p {
+	font-size: 14px;
+}
+
+.modal-container a {
+	color: #40B9A1;
+	font-weight: 500;
+}
+
+.modal-header h2 {
+	margin-top: 0;
+	font-size: 27px;
+}
+
+.modal-body {
+	margin: 20px 0;
+}
+
+.modal-default-button {
+	float: right;
+}
+
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter {
+	opacity: 0;
+}
+
+.modal-leave-active {
+	opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+[v-cloak] {
+	display: none !important;
+}
+
+@media ( max-width: 767px ) {
+	.modal-container {
+		max-width: 95vw;
+		padding: 20px 15px;
+	}
+
+	.modal-header h2 {
+		font-size: 18px;
+	}
+}
